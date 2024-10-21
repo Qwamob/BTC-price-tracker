@@ -62,22 +62,17 @@ f1 = ("poppins", 24, "bold")
 f2 = ("poppins", 22, "bold")
 f3 = ("poppins", 18, "normal")
 
-# Create and place labels
 label = tk.Label(canvas, text="BTC Price", font=f1)
 label.pack(pady=20)
 
 labelPrice = tk.Label(canvas, font=f2)
 labelPrice.pack(pady=20)
 
-# Matplotlib figure setup
+
 fig, ax = plt.subplots(figsize=(5, 4), dpi=100)
 
-# Embedding the matplotlib figure into the Tkinter canvas
 graph_canvas = FigureCanvasTkAgg(fig, master=canvas)
 graph_canvas.get_tk_widget().pack()
 
-# Start fetching and updating the price
 update_price()
-
-# Run the Tkinter event loop
 canvas.mainloop()
